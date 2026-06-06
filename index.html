@@ -46,24 +46,24 @@
 </div>
 
 <script>
-  // 🔗 URLリスト（完全に正しい文字列に固定）
+  // 🔗 URLリスト（Netlify内のファイルにジャンプするように修正）
   var RESULT_URLS = {
-    "GSAD": "http://xs648918.xsrv.jp/2026/06/05/gsad%ef%bc%9a%e6%9a%b4%e3%82%8c%e3%82%93%e5%9d%8a%e3%83%86%e3%82%a3%e3%83%a9%e3%83%8e%e3%82%b5%e3%82%a6%e3%83%ab%e3%82%b9/",
-    "GSAH": "http://xs648918.xsrv.jp/2026/06/05/gsah%ef%bc%9a%e3%83%89%e6%a0%b9%e6%80%a7%e3%82%b7%e3%83%ab%e3%83%90%e3%83%bc%e3%83%90%e3%83%83%e3%82%af/",
-    "GSPD": "http://xs648918.xsrv.jp/2026/06/05/gspd%ef%bc%9a%e3%82%ab%e3%83%aa%e3%82%b9%e3%83%9e%e7%8b%bc/",
-    "GSPH": "http://xs648918.xsrv.jp/2026/06/05/gsph%ef%bc%9a%e9%88%8d%e3%82%ae%e3%83%84%e3%83%8d/",
-    "GFAD": "http://xs648918.xsrv.jp/2026/06/05/gfad%ef%bc%9a%e3%83%9b%e3%83%a9%e5%90%b9%e3%81%8d%e3%82%ab%e3%83%a9%e3%82%b9/",
-    "GFAH": "http://xs648918.xsrv.jp/2026/06/05/gfah%ef%bc%9a%e5%a4%a9%e7%9c%9f%e7%88%9b%e6%bc%ab%e3%83%81%e3%83%af%e3%83%af/",
-    "GFPD": "http://xs648918.xsrv.jp/2026/06/05/gfpd%ef%bc%9a%e9%87%8e%e6%ac%a1%e9%a6%ac%e3%82%b9%e3%82%ba%e3%83%a1/",
-    "GFPH": "http://xs648918.xsrv.jp/2026/06/05/gfph%ef%bc%9a%e6%b0%97%e3%81%be%e3%82%b0%e3%83%ac%e3%82%a4/",
-    "BSAD": "http://xs648918.xsrv.jp/2026/06/05/bsad%ef%bc%9a%e5%a8%81%e9%a2%a8%e5%a0%82%e3%80%85%e3%83%96%e3%83%ab%e3%83%89%e3%83%83%e3%82%b0/",
-    "BSAH": "http://xs648918.xsrv.jp/2026/06/05/bsah%ef%bc%9a%e3%81%82%e3%81%84%e3%81%a4%e3%81%ae%e3%81%8b%e3%81%82%e3%81%a1%e3%82%83%e3%82%93/",
-    "BSPD": "http://xs648918.xsrv.jp/2026/06/05/bspd%ef%bc%9a%e3%82%a2%e3%82%b5%e3%82%b7%e3%83%b3%e3%83%95%e3%82%af%e3%83%ad%e3%82%a6/",
-    "BSPH": "http://xs648918.xsrv.jp/2026/06/05/bsph%ef%bc%9a%e3%81%a9%e3%81%97%e3%81%9f%e3%82%93%e3%81%af%e3%81%aa%e3%81%97%e3%81%8d%e3%81%93%e3%82%ab%e3%83%a1/",
-    "BFAD": "http://xs648918.xsrv.jp/2026/06/05/bfad%ef%bc%9a%e5%8a%a9%e5%a4%aa%e5%88%80%e3%82%b6%e3%83%a0%e3%83%a9%e3%82%a4/",
-    "BFAH": "http://xs648918.xsrv.jp/2026/06/05/bfah%ef%bc%9a%e3%83%91%e3%83%bb%e3%83%95%e3%82%a1%e3%83%b3%e3%82%ad%e3%83%bc%e3%83%a2%e3%83%b3%e3%82%af%e3%83%bc/",
-    "BFPD": "http://xs648918.xsrv.jp/2026/06/05/bfpd%ef%bc%9a%e3%81%94%e6%84%8f%e8%a6%8b%e7%95%aa%e3%83%8f%e3%82%b7%e3%83%93%e3%83%ad%e3%82%b3%e3%82%a6/",
-    "BFPH": "http://xs648918.xsrv.jp/2026/06/05/bfph%ef%bc%9a%e3%81%8a%e3%82%93%e3%81%b6%e3%81%ab%e6%8a%b1%e3%81%a3%e3%81%93%e3%83%a9%e3%83%83%e3%82%b3/"
+    "GSAD": "./gsad",
+    "GSAH": "./gsah",
+    "GSPD": "./gspd",
+    "GSPH": "./gsph",
+    "GFAD": "./gfad",
+    "GFAH": "./gfah",
+    "GFPD": "./gfpd",
+    "GFPH": "./gfph",
+    "BSAD": "./bsad",
+    "BSAH": "./bsah",
+    "BSPD": "./bspd",
+    "BSPH": "./bsph",
+    "BFAD": "./bfad",
+    "BFAH": "./bfah",
+    "BFPD": "./bfpd",
+    "BFPH": "./bfph"
   };
 
   var MASTER_QUESTIONS = [
@@ -197,8 +197,8 @@
         return;
     }
 
-    var separator = baseUrl.slice(-1) === '/' ? '?' : '/?';
-    var finalUrl = baseUrl + separator + 'g=' + fs.G + '&s=' + fs.S + '&a=' + fs.A + '&h=' + fs.H;
+    // 💡 Netlifyのファイル構成（拡張子なし、または .html）に合わせてURLを結合
+    var finalUrl = baseUrl + '?g=' + fs.G + '&s=' + fs.S + '&a=' + fs.A + '&h=' + fs.H;
     
     setTimeout(function() { 
         try {
@@ -209,7 +209,6 @@
     }, 800);
   };
 
-  // 🛠️ 画面読み込み時に、質問を裏側でセットアップする処理を追加
   window.onload = function() {
     questions = [].concat(MASTER_QUESTIONS);
   };
