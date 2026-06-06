@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>フレンドタイプ診断</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #F7FAF9; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 1rem; }
+    .agree-large { background-color: #A3E635; border-color: #84CC16; }
+    .agree-medium { background-color: #BEF264; border-color: #A3E635; }
+    .agree-small { background-color: #D9F99D; border-color: #C2F0C2; }
+    .disagree-small { background-color: #FCD34D; border-color: #FBBF24; }
+    .disagree-medium { background-color: #FDBA74; border-color: #FB923C; }
+    .disagree-large { background-color: #FCA5A5; border-color: #F87171; }
+  </style>
+</head>
+<body>
+
+<div class="w-full max-w-2xl bg-white rounded-3xl shadow-xl overflow-hidden p-6 md:p-8">
+  <div id="start-screen" class="text-center py-10">
+    <div class="inline-block p-4 bg-pink-50 rounded-full mb-4"><span class="text-5xl">🧸</span></div>
+    <h1 class="text-3xl font-extrabold text-gray-800 mb-2">フレンドタイプ診断</h1>
+    <button onclick="startTest()" class="px-10 py-4 bg-gradient-to-r from-pink-400 to-rose-400 text-white font-bold text-lg rounded-full shadow-lg transition-all">
+      診断をはじめる <i class="fa-solid fa-arrow-right ml-2"></i>
+    </button>
+  </div>
+
+  <div id="quiz-screen" class="hidden">
+    <div class="mb-8">
+      <div class="flex justify-between items-center text-xs text-gray-400 font-bold mb-2">
+        <span id="page-indicator">PAGE 1 OF 4</span>
+        <span id="progress-percent" class="text-pink-400">25% COMPLETE</span>
+      </div>
+      <div class="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
+        <div id="progress-bar-fill" class="bg-gradient-to-r from-pink-300 to-rose-300 h-full transition-all duration-500" style="width: 25%"></div>
+      </div>
+    </div>
+    <div id="questions-container" class="space-y-12"></div>
+    <div class="mt-12 flex justify-between items-center border-t border-gray-100 pt-6">
+      <button id="prev-btn" onclick="prevPage()" class="hidden px-6 py-3 border-2 border-gray-200 text-gray-500 font-bold rounded-full">戻る</button>
+      <button id="next-btn" onclick="nextPage()" class="px-8 py-3.5 bg-gradient-to-r from-pink-400 to-rose-400 text-white font-bold rounded-full disabled:opacity-50" disabled="">次のページへ</button>
+    </div>
+  </div>
+  
+  <div id="redirecting-screen" class="hidden text-center py-20">
+    <div class="animate-spin text-pink-400 text-4xl mb-4"><i class="fa-solid fa-circle-notch"></i></div>
+    <p class="text-gray-600 font-bold">結果を解析中...</p>
+  </div>
+</div>
+
+<script>
+  // 🔗 Netlify内ローカルファイルへのマッピング
+  var RESULT_URLS = {
+    "GSAD": "gsad.html",
+    "GSAH": "gsah.html",
+    "GSPD": "gspd.html",
+    "GSPH": "gsph.html",
+    "GFAD": "gfad.html",
+    "GFAH": "gfah.html",
+    "GFPD": "gfpd.html",
+    "GFPH": "gfph.html",
+    "BSAD": "bsad.html",
+    "BSAH": "bsah.html",
+    "BSPD": "bspd.html",
+    "BSPH": "bsph.html",
+    "BFAD": "bfad.html",
+    "BFah": "bfah.html",
+    "BFPD": "bfpd.html",
+    "BFPH": "bfph.html"
+  };
+
+  var MASTER_QUESTIONS = [
+    { id: 1, text: "自分は笑いの中心になることが多い。", dim: "GB", plus: "G" },
+    { id: 2, text: "スベって空気を悪くしてしまうのではないかと気にしてしまう方だ。", dim: "GB", plus: "B" },
+    { id: 3, text: "自分の話をするより人の話を聞く方が得意だ。", dim: "GB", plus: "B" },
+    { id: 4, text: "どちらかと言えばボケ担当だ", dim: "GB", plus: "G" },
+    { id: 5, text: "変わってると言われることがある", dim: "GB", plus: "G" },
+    { id: 6, text: "誰かのために自分の意見を殺しがちだ。", dim: "SF", plus: "F" },
+    { id: 7, text: "ワガママな人は許せない。", dim: "SF", plus: "S" },
+    { id: 8, text: "こだわりがない方だ", dim: "SF", plus: "F" },
+    { id: 9, text: "友達と遊んでいる時、予想外の提案をされると一瞬ムッとする。", dim: "SF", plus: "S" },
+    { id: 10, text: "周りの意見より自分の価値観に沿って物事から判断することが多い。", dim: "SF", plus: "S" },
+    { id: 11, text: "人を誘うより誘われることの方が多い。", dim: "AP", plus: "P" },
+    { id: 12, text: "自分はフットワークが重い方だ", dim: "AP", plus: "P" },
+    { id: 13, text: "やりたいことが次々に思い浮かぶ。", dim: "AP", plus: "A" },
+    { id: 14, text: "気軽に電話をかける方だ。", dim: "AP", plus: "A" },
+    { id: 15, text: "自分が声をかけたイベントに、誰も集まらなくても気にしない方だ。", dim: "AP", plus: "A" },
+    { id: 16, text: "話しているうちに自分の意見があやふやになりがちだ", dim: "HD", plus: "H" },
+    { id: 17, text: "悩み事を話すときは悩みを解決したい時”だけ”だ。", dim: "HD", plus: "D" },
+    { id: 18, text: "たわいもない友達との議論で考え方が被るのは面白くない。", dim: "HD", plus: "D" },
+    { id: 19, text: "反論された時に多少納得できなくても「そうだよね」と言ってしまう。", dim: "HD", plus: "H" },
+    { id: 20, text: "反対意見覚悟で持論を展開してしまう方だ。", dim: "HD", plus: "D" }
+  ];
+
+  var questions = []; var currentPage = 0; var questionsPerPage = 5; var totalPages = 4; var answers = {};
+
+  window.startTest = function() {
+    questions = [].concat(MASTER_QUESTIONS).sort(function() { return Math.random() - 0.5; });
+    currentPage = 0; answers = {};
+    document.getElementById('start-screen').classList.add('hidden');
+    document.getElementById('quiz-screen').classList.remove('hidden');
+    window.renderPage();
+  };
+
+  window.renderPage = function() {
+    var container = document.getElementById('questions-container');
+    container.innerHTML = '';
+    var startIndex = currentPage * questionsPerPage;
+    var pageQuestions = questions.slice(startIndex, startIndex + questionsPerPage);
+
+    pageQuestions.forEach(function(q, idx) {
+      var qNum = startIndex + idx + 1;
+      var saved = answers[q.id] || null;
+      var qCard = document.createElement('div');
+      qCard.className = "bg-slate-50/50 p-6 rounded-2xl border border-gray-100";
+      
+      var html = '<p class="text-center text-lg font-bold text-gray-700 mb-8 leading-relaxed"><span class="text-pink-400 font-bold text-sm block mb-1">Q.' + qNum + '</span>' + q.text + '</p>' +
+        '<div class="max-w-md mx-auto px-2">' +
+          '<div class="flex items-center justify-between w-full pt-6 relative">' +
+            '<div class="w-12 h-12 flex items-center justify-center relative">' +
+              '<span class="absolute -top-7 text-xs font-bold text-green-600 whitespace-nowrap left-1/2 -translate-x-1/2">当てはまる</span>' +
+              '<button onclick="selectAnswer(' + q.id + ', 1)" class="w-12 h-12 rounded-full border-4 flex items-center justify-center transition-all ' + (saved === 1 ? 'agree-large text-white' : 'border-green-300 bg-white') + '">' + (saved === 1 ? '✔' : '') + '</button>' +
+            '</div>' +
+            '<div class="w-12 h-12 flex items-center justify-center">' +
+              '<button onclick="selectAnswer(' + q.id + ', 2)" class="w-10 h-10 rounded-full border-4 flex items-center justify-center transition-all ' + (saved === 2 ? 'agree-medium text-white' : 'border-green-200 bg-white') + '">' + (saved === 2 ? '✔' : '') + '</button>' +
+            '</div>' +
+            '<div class="w-12 h-12 flex items-center justify-center">' +
+              '<button onclick="selectAnswer(' + q.id + ', 3)" class="w-8 h-8 rounded-full border-4 flex items-center justify-center transition-all ' + (saved === 3 ? 'agree-small text-green-700' : 'border-green-100 bg-white') + '">' + (saved === 3 ? '✔' : '') + '</button>' +
+            '</div>' +
+            '<div class="w-12 h-12 flex items-center justify-center">' +
+              '<button onclick="selectAnswer(' + q.id + ', 4)" class="w-8 h-8 rounded-full border-4 flex items-center justify-center transition-all ' + (saved === 4 ? 'disagree-small text-amber-700' : 'border-amber-100 bg-white') + '">' + (saved === 4 ? '✔' : '') + '</button>' +
+            '</div>' +
+            '<div class="w-12 h-12 flex items-center justify-center">' +
+              '<button onclick="selectAnswer(' + q.id + ', 5)" class="w-10 h-10 rounded-full border-4 flex items-center justify-center transition-all ' + (saved === 5 ? 'disagree-medium text-white' : 'border-orange-200 bg-white') + '">' + (saved === 5 ? '✔' : '') + '</button>' +
+            '</div>' +
+            '<div class="w-12 h-12 flex items-center justify-center relative">' +
+              '<span class="absolute -top-7 text-xs font-bold text-rose-400 whitespace-nowrap left-1/2 -translate-x-1/2">当てはまらない</span>' +
+              '<button onclick="selectAnswer(' + q.id + ', 6)" class="w-12 h-12 rounded-full border-4 flex items-center justify-center transition-all ' + (saved === 6 ? 'disagree-large text-white' : 'border-red-300 bg-white') + '">' + (saved === 6 ? '✔' : '') + '</button>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+        
+      qCard.innerHTML = html;
+      container.appendChild(qCard);
+    });
+
+    document.getElementById('page-indicator').textContent = 'PAGE ' + (currentPage + 1) + ' OF 4';
+    var progress = Math.round(((currentPage + 1) / 4) * 100);
+    document.getElementById('progress-bar-fill').style.width = progress + '%';
+    document.getElementById('prev-btn').classList.toggle('hidden', currentPage === 0);
+    window.checkPageCompletion();
+  };
+
+  window.selectAnswer = function(qId, val) { answers[qId] = val; window.renderPage(); };
+  
+  window.checkPageCompletion = function() {
+    var pageQs = questions.slice(currentPage * 5, (currentPage * 5) + 5);
+    var allAnswered = true;
+    for (var i = 0; i < pageQs.length; i++) {
+      if (!answers[pageQs[i].id]) {
+        allAnswered = false;
+        break;
+      }
+    }
+    document.getElementById('next-btn').disabled = !allAnswered;
+  };
+
+  window.prevPage = function() { currentPage--; window.renderPage(); window.scrollTo(0, 0); };
+  
+  window.nextPage = function() {
+    if (currentPage < 3) { currentPage++; window.renderPage(); window.scrollTo(0, 0); } 
+    else { window.calculateAndRedirect(); }
+  };
+
+  window.calculateAndRedirect = function() {
+    document.getElementById('quiz-screen').classList.add('hidden');
+    document.getElementById('redirecting-screen').classList.remove('hidden');
+
+    var scores = { G: [], B: [], S: [], F: [], A: [], P: [], H: [], D: [] };
+    questions.forEach(function(q) {
+      var p = 50; var v = answers[q.id];
+      if(v==1)p=100; else if(v==2)p=80; else if(v==3)p=60; else if(v==4)p=40; else if(v==5)p=20; else if(v==6)p=0;
+      var op = q.plus === "G"?"B":q.plus==="S"?"F":q.plus==="A"?"P":"D";
+      if(["G","S","A","H"].includes(q.plus)){ scores[q.plus].push(p); scores[op].push(100-p); }
+      else { scores[q.plus].push(p); var realOp = q.plus==="B"?"G":q.plus==="F"?"S":q.plus==="P"?"A":"H"; scores[realOp].push(100-p); }
+    });
+
+    var avg = function(arr) {
+      var total = 0;
+      for(var i=0; i<arr.length; i++) { total += arr[i]; }
+      return Math.round(total / arr.length);
+    };
+    
+    var fs = { G:avg(scores.G), S:avg(scores.S), A:avg(scores.A), H:avg(scores.H) };
+    var code = (fs.G>=50?"G":"B")+(fs.S>=50?"S":"F")+(fs.A>=50?"A":"P")+(fs.H>=50?"H":"D");
+
+    var baseUrl = RESULT_URLS[code];
+    if (!baseUrl) {
+        alert("エラー: 結果ページの設定が見つかりません。");
+        return;
+    }
+
+    // デモ版用にパラメータを綺麗に結合
+    var finalUrl = baseUrl + '?g=' + fs.G + '&s=' + fs.S + '&a=' + fs.A + '&h=' + fs.H;
+    
+    setTimeout(function() { 
+        try {
+            window.top.location.href = finalUrl; 
+        } catch (e) {
+            window.location.href = finalUrl; 
+        }
+    }, 800);
+  };
+</script>
+</body>
+</html>
