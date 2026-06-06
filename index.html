@@ -46,24 +46,12 @@
 </div>
 
 <script>
-  // 🔗 URLリスト（Netlify内のファイルにジャンプするように修正）
+  // 🔗 各タイプのファイル名を設定（.htmlを追加）
   var RESULT_URLS = {
-    "GSAD": "./gsad",
-    "GSAH": "./gsah",
-    "GSPD": "./gspd",
-    "GSPH": "./gsph",
-    "GFAD": "./gfad",
-    "GFAH": "./gfah",
-    "GFPD": "./gfpd",
-    "GFPH": "./gfph",
-    "BSAD": "./bsad",
-    "BSAH": "./bsah",
-    "BSPD": "./bspd",
-    "BSPH": "./bsph",
-    "BFAD": "./bfad",
-    "BFAH": "./bfah",
-    "BFPD": "./bfpd",
-    "BFPH": "./bfph"
+    "GSAD": "gsad.html", "GSAH": "gsah.html", "GSPD": "gspd.html", "GSPH": "gsph.html",
+    "GFAD": "gfad.html", "GFAH": "gfah.html", "GFPD": "gfpd.html", "GFPH": "gfph.html",
+    "BSAD": "bsad.html", "BSAH": "bsah.html", "BSPD": "bspd.html", "BSPH": "bsph.html",
+    "BFAD": "bfad.html", "BFAH": "bfah.html", "BFPD": "bfpd.html", "BFPH": "bfph.html"
   };
 
   var MASTER_QUESTIONS = [
@@ -197,8 +185,8 @@
         return;
     }
 
-    // 💡 Netlifyのファイル構成（拡張子なし、または .html）に合わせてURLを結合
-    var finalUrl = baseUrl + '?g=' + fs.G + '&s=' + fs.S + '&a=' + fs.A + '&h=' + fs.H;
+    // 各タイプの .html ファイルに向けてデータを送る
+    var finalUrl = './' + baseUrl + '?g=' + fs.G + '&s=' + fs.S + '&a=' + fs.A + '&h=' + fs.H;
     
     setTimeout(function() { 
         try {
