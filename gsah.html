@@ -1,129 +1,47 @@
-<div class="result-container" style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: 'Helvetica Neue', Arial, sans-serif; text-align: center; background: #fff; border-radius: 24px;">
-  
-  <p style="color: #8B5CF6; font-weight: bold; font-size: 14px; margin-bottom: 5px;">あなたのフレンドタイプは...</p>
-  
-  <!-- タイトルエリア（URLパラメータ ?t= で上書きも可能） -->
-  <h1 id="type-code-title" style="font-size: 28px; font-weight: 900; color: #1E293B; margin-top: 0; margin-bottom: 20px;">
-    GSAH
-  </h1>
-
-  <!-- キャラクター画像表示エリア -->
-  <div style="background: linear-gradient(to bottom, #FFE4E6, #FFEDD5); border-radius: 24px; padding: 30px; display: inline-block; width: 100%; max-width: 320px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); margin-bottom: 35px;">
-    <img src="http://xs648918.xsrv.jp/wp-content/uploads/2026/06/GSAH：ド根性シルバーバック.jpeg" style="width: 100%; height: auto; object-fit: contain;">
-    <!-- キャラクター名表示 -->
-    <p style="font-size: 20px; font-weight: bold; color: #1E293B; margin-top: 15px; margin-bottom: 0;">
-      GSAH：ド根性シルバーバック
-    </p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>診断結果 - GSAH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style> body { background-color: #F7FAF9; } </style>
+</head>
+<body class="p-4 md:p-8 flex flex-col items-center justify-center min-h-screen">
+  <p class="text-center text-sm font-bold text-indigo-500 mb-1">あなたのフレンドタイプは...</p>
+  <h1 class="text-center text-3xl font-extrabold text-slate-800 mb-6">GSAH</h1>
+  <div class="w-full max-w-[320px] bg-orange-50 border border-orange-100 rounded-3xl p-4 text-center shadow-sm mb-8">
+    <img src="./GSAH.jpeg" class="w-full h-auto rounded-2xl mb-3 shadow-inner" alt="GSAH">
+    <p class="text-lg font-black text-slate-800">GSAH：ド根性シルバーバック</p>
   </div>
-
-  <!-- メーターデザイン -->
-  <div id="meters-box" style="text-align: left; background: #FFF; padding: 10px 0;">
-    <!-- メーター1：GameChanger vs Balance -->
-    <div style="margin-bottom: 24px;">
-      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
-        <span id="lbl-l-0">GameChanger (G)</span><span id="lbl-r-0">Balance (B)</span>
-      </div>
-      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
-        <div id="bar-0" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
-        <div id="dot-0" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
-        <span id="val-l-0">0%</span><span id="val-r-0">0%</span>
-      </div>
+  <div id="meters-box" class="w-full max-w-md bg-white rounded-3xl shadow-md p-6 space-y-6">
+    <div>
+      <div class="flex justify-between text-xs font-bold text-slate-500 mb-1"><span>GameChanger (G)</span><span class="text-lime-600 font-extrabold">Balance (B)</span></div>
+      <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden relative"><div id="bar-0" class="bg-lime-400 h-full transition-all duration-1000" style="width: 0%"></div></div>
     </div>
-
-    <!-- メーター2：Stubborn vs Flexible -->
-    <div style="margin-bottom: 24px;">
-      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
-        <span id="lbl-l-1">Stubborn (S)</span><span id="lbl-r-1">Flexible (F)</span>
-      </div>
-      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
-        <div id="bar-1" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
-        <div id="dot-1" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
-        <span id="val-l-1">0%</span><span id="val-r-1">0%</span>
-      </div>
+    <div>
+      <div class="flex justify-between text-xs font-bold text-slate-500 mb-1"><span>Stubborn (S)</span><span class="text-pink-500 font-extrabold">Flexible (F)</span></div>
+      <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden relative"><div id="bar-1" class="bg-pink-400 h-full transition-all duration-1000" style="width: 0%"></div></div>
     </div>
-
-    <!-- メーター3：Active vs Passive -->
-    <div style="margin-bottom: 24px;">
-      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
-        <span id="lbl-l-2">Active (A)</span><span id="lbl-r-2">Passive (P)</span>
-      </div>
-      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
-        <div id="bar-2" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
-        <div id="dot-2" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
-        <span id="val-l-2">0%</span><span id="val-r-2">0%</span>
-      </div>
+    <div>
+      <div class="flex justify-between text-xs font-bold text-slate-500 mb-1"><span class="text-sky-500 font-extrabold">Active (A)</span><span>Passive (P)</span></div>
+      <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden relative"><div id="bar-2" class="bg-sky-400 h-full transition-all duration-1000" style="width: 0%"></div></div>
     </div>
-
-    <!-- メーター4：Harmony vs Discussion -->
-    <div style="margin-bottom: 24px;">
-      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
-        <span id="lbl-l-3">Harmony (H)</span><span id="lbl-r-3">Discussion (D)</span>
-      </div>
-      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
-        <div id="bar-3" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
-        <div id="dot-3" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
-      </div>
-      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
-        <span id="val-l-3">0%</span><span id="val-r-3">0%</span>
-      </div>
+    <div>
+      <div class="flex justify-between text-xs font-bold text-slate-500 mb-1"><span>Harmony (H)</span><span class="text-amber-500 font-extrabold">Discussion (D)</span></div>
+      <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden relative"><div id="bar-3" class="bg-amber-400 h-full transition-all duration-1000" style="width: 0%"></div></div>
     </div>
   </div>
-
-  <!-- もう一度診断するボタン -->
-  <div style="margin-top: 35px; margin-bottom: 20px;">
-    <a href="https://xs648918.xsrv.jp/friend-type-test/" style="display: inline-block; padding: 14px 40px; background: #F1F5F9; color: #64748B; font-weight: bold; text-decoration: none; border-radius: 9999px; font-size: 15px; transition: background 0.2s;">もう一度診断する <i class="fa-solid fa-rotate-right" style="margin-left:5px;"></i></a>
-  </div>
-  
-  <hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 40px 0;">
-</div>
-
-<script>
-(function(){
-    const params = new URLSearchParams(window.location.search);
-    const titleParam = params.get('t');
-    if (titleParam) {
-        document.getElementById('type-code-title').innerText = titleParam;
-    }
-
-    const g = Math.max(0, Math.min(100, parseInt(params.get('g')) || 50));
-    const s = Math.max(0, Math.min(100, parseInt(params.get('s')) || 50));
-    const a = Math.max(0, Math.min(100, parseInt(params.get('a')) || 50));
-    const h = Math.max(0, Math.min(100, parseInt(params.get('h')) || 50));
-    const scores = [g, s, a, h];
-
-    const colors = ["#A3E635", "#F472B6", "#38BDF8", "#FBBF24"]; 
-
-    scores.forEach((val, i) => {
-        const bar = document.getElementById('bar-' + i);
-        const dot = document.getElementById('dot-' + i);
-        const valL = document.getElementById('val-l-' + i);
-        const valR = document.getElementById('val-r-' + i);
-        const lblL = document.getElementById('lbl-l-' + i);
-        const lblR = document.getElementById('lbl-r-' + i);
-
-        valL.innerText = val + '%';
-        valR.innerText = (100 - val) + '%';
-
-        setTimeout(() => {
-            dot.style.left = (100 - val) + '%';
-            dot.style.border = "4px solid " + colors[i];
-            
-            if(val >= 50) {
-                lblL.style.color = "#0F172A"; lblL.style.fontSize = "15px";
-                lblR.style.color = "#94A3B8"; lblR.style.fontSize = "12px";
-                bar.style.left = "0"; bar.style.right = (val) + "%"; bar.style.background = colors[i];
-            } else {
-                lblL.style.color = "#94A3B8"; lblL.style.fontSize = "12px";
-                lblR.style.color = "#0F172A"; lblR.style.fontSize = "15px";
-                bar.style.right = "0"; bar.style.left = (100 - val) + "%"; bar.style.background = colors[i];
-            }
-        }, 100);
-    });
-})();
-</script>
+  <div class="mt-8"><a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2"><i class="fa-solid fa-rotate-right"></i> もう一度診断する</a></div>
+  <script>
+    window.onload = function() {
+      var params = new URLSearchParams(window.location.search);
+      var g = parseInt(params.get('g')) || 50; var s = parseInt(params.get('s')) || 50; var a = parseInt(params.get('a')) || 50; var h = parseInt(params.get('h')) || 50;
+      setTimeout(function() {
+        document.getElementById('bar-0').style.width = (100 - g) + '%'; document.getElementById('bar-1').style.width = (100 - s) + '%'; document.getElementById('bar-2').style.width = a + '%'; document.getElementById('bar-3').style.width = (100 - h) + '%';
+      }, 300);
+    };
+  </script>
+</body>
+</html>
