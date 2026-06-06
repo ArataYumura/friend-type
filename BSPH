@@ -1,0 +1,120 @@
+<div class="result-container" style="max-width: 600px; margin: 0 auto; padding: 20px; font-family: 'Helvetica Neue', Arial, sans-serif; text-align: center; background: #fff; border-radius: 24px;">
+  
+  <p style="color: #8B5CF6; font-weight: bold; font-size: 14px; margin-bottom: 5px;">あなたのフレンドタイプは...</p>
+  
+  <h1 id="type-code-title" style="font-size: 28px; font-weight: 900; color: #1E293B; margin-top: 0; margin-bottom: 20px;">
+    BSPH
+  </h1>
+
+  <div style="background: linear-gradient(to bottom, #FFE4E6, #FFEDD5); border-radius: 24px; padding: 30px; display: inline-block; width: 100%; max-width: 320px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); margin-bottom: 35px;">
+    <img src="http://xs648918.xsrv.jp/wp-content/uploads/2026/06/BSPH：どしたんはなしきこカメ.jpeg" style="width: 100%; height: auto; object-fit: contain;">
+    <p style="font-size: 20px; font-weight: bold; color: #1E293B; margin-top: 15px; margin-bottom: 0;">
+      BSPH：どしたんはなしきこカメ
+    </p>
+  </div>
+
+  <div id="meters-box" style="text-align: left; background: #FFF; padding: 10px 0;">
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
+        <span id="lbl-l-0">GameChanger (G)</span><span id="lbl-r-0">Balance (B)</span>
+      </div>
+      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
+        <div id="bar-0" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
+        <div id="dot-0" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
+        <span id="val-l-0">0%</span><span id="val-r-0">0%</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
+        <span id="lbl-l-1">Stubborn (S)</span><span id="lbl-r-1">Flexible (F)</span>
+      </div>
+      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
+        <div id="bar-1" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
+        <div id="dot-1" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
+        <span id="val-l-1">0%</span><span id="val-r-1">0%</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
+        <span id="lbl-l-2">Active (A)</span><span id="lbl-r-2">Passive (P)</span>
+      </div>
+      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
+        <div id="bar-2" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
+        <div id="dot-2" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
+        <span id="val-l-2">0%</span><span id="val-r-2">0%</span>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700; color: #475569; margin-bottom: 6px;">
+        <span id="lbl-l-3">Harmony (H)</span><span id="lbl-r-3">Discussion (D)</span>
+      </div>
+      <div style="height: 14px; background: #E2E8F0; border-radius: 9999px; position: relative;">
+        <div id="bar-3" style="position: absolute; top: 0; bottom: 0; border-radius: 9999px; transition: all 1s ease-out;"></div>
+        <div id="dot-3" style="position: absolute; top: 50%; width: 24px; height: 24px; background: #FFF; border-radius: 50%; transform: translate(-50%, -50%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 1s ease-out;"></div>
+      </div>
+      <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; color: #94A3B8; margin-top: 4px;">
+        <span id="val-l-3">0%</span><span id="val-r-3">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top: 35px; margin-bottom: 20px;">
+    <a href="https://xs648918.xsrv.jp/friend-type-test/" style="display: inline-block; padding: 14px 40px; background: #F1F5F9; color: #64748B; font-weight: bold; text-decoration: none; border-radius: 9999px; font-size: 15px; transition: background 0.2s;">もう一度診断する <i class="fa-solid fa-rotate-right" style="margin-left:5px;"></i></a>
+  </div>
+  
+  <hr style="border: 0; border-top: 1px solid #E2E8F0; margin: 40px 0;">
+</div>
+
+<script>
+(function(){
+    const params = new URLSearchParams(window.location.search);
+    const titleParam = params.get('t');
+    if (titleParam) {
+        document.getElementById('type-code-title').innerText = titleParam;
+    }
+
+    const g = Math.max(0, Math.min(100, parseInt(params.get('g')) || 50));
+    const s = Math.max(0, Math.min(100, parseInt(params.get('s')) || 50));
+    const a = Math.max(0, Math.min(100, parseInt(params.get('a')) || 50));
+    const h = Math.max(0, Math.min(100, parseInt(params.get('h')) || 50));
+    const scores = [g, s, a, h];
+
+    const colors = ["#A3E635", "#F472B6", "#38BDF8", "#FBBF24"]; 
+
+    scores.forEach((val, i) => {
+        const bar = document.getElementById('bar-' + i);
+        const dot = document.getElementById('dot-' + i);
+        const valL = document.getElementById('val-l-' + i);
+        const valR = document.getElementById('val-r-' + i);
+        const lblL = document.getElementById('lbl-l-' + i);
+        const lblR = document.getElementById('lbl-r-' + i);
+
+        valL.innerText = val + '%';
+        valR.innerText = (100 - val) + '%';
+
+        setTimeout(() => {
+            dot.style.left = (100 - val) + '%';
+            dot.style.border = "4px solid " + colors[i];
+            
+            if(val >= 50) {
+                lblL.style.color = "#0F172A"; lblL.style.fontSize = "15px";
+                lblR.style.color = "#94A3B8"; lblR.style.fontSize = "12px";
+                bar.style.left = "0"; bar.style.right = (val) + "%"; bar.style.background = colors[i];
+            } else {
+                lblL.style.color = "#94A3B8"; lblL.style.fontSize = "12px";
+                lblR.style.color = "#0F172A"; lblR.style.fontSize = "15px";
+                bar.style.right = "0"; bar.style.left = (100 - val) + "%"; bar.style.background = colors[i];
+            }
+        }, 100);
+    });
+})();
+</script>
