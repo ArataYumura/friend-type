@@ -73,14 +73,39 @@
     </div>
   </div>
   <div class="mt-8"><a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2"><i class="fa-solid fa-rotate-right"></i> もう一度診断する</a></div>
-  <script>
-    window.onload = function() {
-      var params = new URLSearchParams(window.location.search);
-      var g = parseInt(params.get('g')) || 50; var s = parseInt(params.get('s')) || 50; var a = parseInt(params.get('a')) || 50; var h = parseInt(params.get('h')) || 50;
+<script>
+    function getParam(name) {
+      var url = new URL(window.location.href);
+      return parseInt(url.searchParams.get(name)) || 50;
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      var g = getParam('g');
+      var s = getParam('s');
+      var a = getParam('a');
+      var h = getParam('h');
+
+      var b = 100 - g;
+      var f = 100 - s;
+      var p = 100 - a;
+      var d = 100 - h;
+
+      document.getElementById('pct-g').textContent = g + '%';
+      document.getElementById('pct-b').textContent = b + '%';
+      document.getElementById('pct-s').textContent = s + '%';
+      document.getElementById('pct-f').textContent = f + '%';
+      document.getElementById('pct-a').textContent = a + '%';
+      document.getElementById('pct-p').textContent = p + '%';
+      document.getElementById('pct-h').textContent = h + '%';
+      document.getElementById('pct-d').textContent = d + '%';
+
       setTimeout(function() {
-        document.getElementById('bar-0').style.width = (100 - g) + '%'; document.getElementById('bar-1').style.width = (100 - s) + '%'; document.getElementById('bar-2').style.width = a + '%'; document.getElementById('bar-3').style.width = (100 - h) + '%';
+        document.getElementById('pin-g').style.left = 'calc(' + g + '% - 10px)';
+        document.getElementById('pin-s').style.left = 'calc(' + s + '% - 10px)';
+        document.getElementById('pin-a').style.left = 'calc(' + a + '% - 10px)';
+        document.getElementById('pin-h').style.left = 'calc(' + h + '% - 10px)';
       }, 300);
-    };
+    });
   </script>
 </body>
 </html>
