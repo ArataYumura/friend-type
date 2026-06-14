@@ -127,4 +127,53 @@
         </h2>
         <p class="text-sm leading-relaxed bg-rose-50/40 p-4 rounded-2xl border border-rose-100/70">
           あなたの鋭い一言や媚びない態度は最高にスタイリッシュですが、時と場合によっては、ただの「冷酷で協調性のない人」「空気をぶち壊す面倒くさい人」になってしまう危険性があります。あなたが「つまらない」と切り捨てた計画も、他のメンバーにとっては一生懸命考えたものかもしれません。そこで正論の爆弾だけを落として帰ってしまうと、周りは傷つき、言葉の刃に怯えるようになってしまいます。<br><br>
-          また、あまりにも誘いを断り続けたり、そっけない態度を取りすぎると、友達もさすがに折れて「もう狼は誘っても来ないし、そっとしておこう
+          また、あまりにも誘いを断り続けたり、そっけない態度を取りすぎると、友達もさすがに折れて「もう狼は誘っても来ないし、そっとしておこう……」と、完全に隔離されてしまう可能性があります。<br><br>
+          たまには「今回はみんなのノリに付き合ってやるか」と少しだけ歩み寄ったり、爆弾を落とするだけでなく「こう変えたらもっと面白くなるんじゃない？」と代替案を出してあげる優しさを見せると、あなたのカリスマ性は「恐怖」ではなく、誰もが一生ついていきたい「憧れ」へと進化します。
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-8">
+    <a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2">
+      <i class="fa-solid fa-rotate-right"></i> もう一度診断する
+    </a>
+  </div>
+
+  <script>
+    function getParam(name) {
+      var url = new URL(window.location.href);
+      return parseInt(url.searchParams.get(name)) || 50;
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      var g = getParam('g');
+      var s = getParam('s');
+      var a = getParam('a');
+      var h = getParam('h');
+
+      var b = 100 - g;
+      var f = 100 - s;
+      var p = 100 - a;
+      var d = 100 - h;
+
+      document.getElementById('pct-g').textContent = g + '%';
+      document.getElementById('pct-b').textContent = b + '%';
+      document.getElementById('pct-s').textContent = s + '%';
+      document.getElementById('pct-f').textContent = f + '%';
+      document.getElementById('pct-a').textContent = a + '%';
+      document.getElementById('pct-p').textContent = p + '%';
+      document.getElementById('pct-h').textContent = h + '%';
+      document.getElementById('pct-d').textContent = d + '%';
+
+      setTimeout(function() {
+        document.getElementById('pin-g').style.left = 'calc(' + b + '% - 10px)';
+        document.getElementById('pin-s').style.left = 'calc(' + f + '% - 10px)';
+        document.getElementById('pin-a').style.left = 'calc(' + p + '% - 10px)';
+        document.getElementById('pin-h').style.left = 'calc(' + d + '% - 10px)';
+      }, 300);
+    });
+  </script>
+</body>
+</html>
