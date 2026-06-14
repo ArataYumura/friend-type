@@ -162,17 +162,19 @@
       document.getElementById('pct-h').textContent = h + '%';
       document.getElementById('pct-d').textContent = d + '%';
 
-      // 初期位置をいったん左端(0%)にしてから、アニメーションで正しい位置へ移動
-      document.getElementById('pin-g').style.left = '0%';
-      document.getElementById('pin-s').style.left = '0%';
-      document.getElementById('pin-a').style.left = '0%';
-      document.getElementById('pin-h').style.left = '0%';
+    // 初期位置をいったん真ん中（50%）にセット
+      document.getElementById('pin-g').style.left = '50%';
+      document.getElementById('pin-s').style.left = '50%';
+      document.getElementById('pin-a').style.left = '50%';
+      document.getElementById('pin-h').style.left = '50%';
 
+      // 300ミリ秒（0.3秒）後にURLのスコア位置へスムーズに移動
       setTimeout(function() {
         document.getElementById('pin-g').style.left = 'calc(' + b + '% - 10px)';
         document.getElementById('pin-s').style.left = 'calc(' + f + '% - 10px)';
         document.getElementById('pin-a').style.left = 'calc(' + p + '% - 10px)';
         document.getElementById('pin-h').style.left = 'calc(' + d + '% - 10px)';
+      }, 300);
       }, 100);
     });
   </script>
