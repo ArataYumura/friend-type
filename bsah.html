@@ -11,68 +11,137 @@
 <body class="p-4 md:p-8 flex flex-col items-center justify-center min-h-screen">
   <p class="text-center text-sm font-bold text-indigo-500 mb-1">あなたのフレンドタイプは...</p>
   <h1 class="text-center text-3xl font-extrabold text-slate-800 mb-6">BSAH</h1>
+  
   <div class="w-full max-w-[320px] bg-orange-50 border border-orange-100 rounded-3xl p-4 text-center shadow-sm mb-8">
     <img src="./BSAH.jpeg" class="w-full h-auto rounded-2xl mb-3 shadow-inner" alt="BSAH">
     <p class="text-lg font-black text-slate-800">BSAH：”あいつ”のかあちゃん</p>
   </div>
- <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-md p-6 md:p-8 space-y-8 border border-gray-100">
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>GameChanger (G)</span>
-        <span>Balance (B)</span>
+
+  <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-md p-6 md:p-8 border border-gray-100 space-y-8 text-slate-700">
+    
+    <div class="space-y-8">
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>GameChanger (G)</span>
+          <span>Balance (B)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full my-4">
+          <div id="pin-g" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-lime-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-lime-600">
+          <span id="pct-g">-%</span>
+          <span id="pct-b">-%</span>
+        </div>
       </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full my-4">
-        <div id="pin-g" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-lime-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>Stubborn (S)</span>
+          <span>Flexible (F)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full my-4">
+          <div id="pin-s" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-pink-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-pink-600">
+          <span id="pct-s">-%</span>
+          <span id="pct-f">-%</span>
+        </div>
       </div>
-      <div class="flex justify-between text-xs font-extrabold text-lime-600">
-        <span id="pct-g">-%</span>
-        <span id="pct-b">-%</span>
+
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>Active (A)</span>
+          <span>Passive (P)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full my-4">
+          <div id="pin-a" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-sky-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-sky-600">
+          <span id="pct-a">-%</span>
+          <span id="pct-p">-%</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>Harmony (H)</span>
+          <span>Discussion (D)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full my-4">
+          <div id="pin-h" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-amber-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-amber-600">
+          <span id="pct-h">-%</span>
+          <span id="pct-d">-%</span>
+        </div>
       </div>
     </div>
 
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>Stubborn (S)</span>
-        <span>Flexible (F)</span>
+    <hr class="border-gray-100 my-2">
+
+    <div class="space-y-6">
+      
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-id-card text-slate-400 text-sm"></i> 1. 基本的な性格診断
+        </h2>
+        <p class="text-sm leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100/70">
+          あなたは、グループのメンバー全員に対して、まるで家族のような深い愛と気配りを持って接する「精神的支柱」です。自分から目立つようなお喋りをしたり、笑いの中心になろうとしたりすることはなく、常に「みんなが無理をしていないか」「本当に楽しめているか」を、言葉にせずとも察知できる並外れた包容力と高い共感能力を持っています。<br><br>
+          基本的には穏やかで、全員のどんな話も「うんうん」と受け止める聞き上手ですが、単なるお人好しではありません。自分が余計な発言をして空気を悪くすることを恐れる繊細さがあるからこそ、逆にグループの和を乱すような失礼な行動 or 誰かを傷つけるような行き過ぎたノリに対しては、毅然とした態度で「それはダメだよ」と優しく引き戻せる、強い芯を持っています。
+        </p>
       </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full my-4">
-        <div id="pin-s" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-pink-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-users text-slate-400 text-sm"></i> 2. 周りの人から見たあなたの見え方
+        </h2>
+        <p class="text-sm leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100/70">
+          友達から見たあなたは、ズバリ<span class="font-bold text-slate-900 bg-amber-100 px-1 rounded">「どんなに場が暴走しても、実家のような安心感で元の空気に戻してくれるオカン」</span>です。<br><br>
+          みんなが自分の話したいことを一斉に捲し立てたり、トゲのあるいじり合いで不穏な空気が流れそうになったりしたとき、あなたは一歩引いたところから全員の話をしっかり聞いています。そして、場がグダグダになったりギスギスしそうになったりした瞬間、「まぁまぁ、みんな落ち着きなよ」「ほら、お腹空いてるからそんなトゲトゲするんだよ、何か食べよ！」と割って入るだけで、一瞬で場が丸く収まります。友達は、あなたの前では子供のように素真面目になってしまい、不思議と反論する気が起きません。<br><br>
+          遊びに行くときも、あなたが「みんな忘れ物ない？」とさりげなく声をかけてくれる姿に、友達は圧倒的な安心感を覚えています。全員があなたのその聞き上手な優しさと、ここぞという時の軌道修正能力にリスペクトを込めて、グループに絶対にいなくてはならない「最後の砦」として深く信頼し、愛しています。
+        </p>
       </div>
-      <div class="flex justify-between text-xs font-extrabold text-pink-600">
-        <span id="pct-s">-%</span>
-        <span id="pct-f">-%</span>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-thumbs-up text-slate-400 text-sm"></i> 3. 友達としての良いところ
+        </h2>
+        <div class="bg-emerald-50/40 p-4 rounded-2xl border border-emerald-100/70 space-y-4">
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ 揉め事や行き過ぎたノリを浄化する、圧倒的な仲裁力</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">感情的にならず、両方の言い分をフラットに聞いた上で、お互いが納得する温かい解決策を提示してくれます。あなたがいれば、グループが崩壊することは絶対にありません。</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ どんなダメな自分も受け入れてくれる、底なしの傾聴力</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">他の人には言えないような情けない悩みや失敗も、自分の話にすり替えたりせず、最後まで「大変だったね」と寄り添ってくれるため、最高の心の安全地帯になっています。</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ いるだけでグループが「家族」になる温かい空気感</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">あなたの放つウェルカムなオーラが、個性の強いメンバーたちを一つに繋ぎ止める接着剤になっています。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm"></i> 4. 交友関係を築く上での注意ポイント
+        </h2>
+        <p class="text-sm leading-relaxed bg-rose-50/40 p-4 rounded-2xl border border-rose-100/70">
+          あなたの「みんなをケアして、場を穏やかに戻す」というスタンスは素晴らしいですが、時にそれが周りにとって「ちょっと過保護で、お節介な小言」に聞こえてしまうことがあります。友達がただの愚痴として聞いてほしいだけなのに、あなたが全体のバランスを気にするあまり「それじゃダメだよ」「もっとこうしなさい」と正論の説教をしてしまうと、相手は「親と同じこと言われてるみたいでダルいな……」と引いてしまいます。<br><br>
+          また、周りはあなたを「頼れるオカン」だと思い込んでいるため、あなたが今どんなに疲れていても、ついついあなたを頼り、すべての面倒事を押し付けてしまいがちです。<br><br>
+          みんなの話を聞いてあげるだけでなく、たまには「あー！今日はみんなが私の話を聞く番！かあちゃん定休日！」と、自分から弱音を吐いたり甘えたりする姿を見せてください。友達はいつもお世話になっているあなたに恩返しができる絶好のチャンスだと大喜びし、より対等で居心地の良い関係が築けるようになります。
+        </p>
       </div>
     </div>
 
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>Active (A)</span>
-        <span>Passive (P)</span>
-      </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full my-4">
-        <div id="pin-a" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-sky-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
-      </div>
-      <div class="flex justify-between text-xs font-extrabold text-sky-600">
-        <span id="pct-a">-%</span>
-        <span id="pct-p">-%</span>
-      </div>
-    </div>
-
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>Harmony (H)</span>
-        <span>Discussion (D)</span>
-      </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full my-4">
-        <div id="pin-h" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-amber-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
-      </div>
-      <div class="flex justify-between text-xs font-extrabold text-amber-600">
-        <span id="pct-h">-%</span>
-        <span id="pct-d">-%</span>
-      </div>
-    </div>
   </div>
-  <div class="mt-8"><a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2"><i class="fa-solid fa-rotate-right"></i> もう一度診断する</a></div>
+
+  <div class="mt-8 mb-12">
+    <a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2">
+      <i class="fa-solid fa-rotate-right"></i> もう一度診断する
+    </a>
+  </div>
+
   <script>
     function getParam(name) {
       var url = new URL(window.location.href);
