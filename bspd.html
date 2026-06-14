@@ -11,76 +11,144 @@
 <body class="p-4 md:p-8 flex flex-col items-center justify-center min-h-screen">
   <p class="text-center text-sm font-bold text-indigo-500 mb-1">あなたのフレンドタイプは...</p>
   <h1 class="text-center text-3xl font-extrabold text-slate-800 mb-6">BSPD</h1>
+  
   <div class="w-full max-w-[320px] bg-orange-50 border border-orange-100 rounded-3xl p-4 text-center shadow-sm mb-8">
     <img src="./BSPD.jpeg" class="w-full h-auto rounded-2xl mb-3 shadow-inner" alt="BSPD">
     <p class="text-lg font-black text-slate-800">BSPD：アサシンフクロウ</p>
   </div>
-  <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-md p-6 md:p-8 space-y-8 border border-gray-100">
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>GameChanger (G)</span>
-        <span>Balance (B)</span>
+
+  <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-md p-6 md:p-8 border border-gray-100 space-y-8 text-slate-700">
+    
+    <div class="space-y-8">
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>GameChanger (G)</span>
+          <span>Balance (B)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full my-4">
+          <div id="pin-g" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-lime-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-lime-600">
+          <span id="pct-g">-%</span>
+          <span id="pct-b">-%</span>
+        </div>
       </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full my-4">
-        <div id="pin-g" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-lime-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>Stubborn (S)</span>
+          <span>Flexible (F)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full my-4">
+          <div id="pin-s" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-pink-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-pink-600">
+          <span id="pct-s">-%</span>
+          <span id="pct-f">-%</span>
+        </div>
       </div>
-      <div >lass="flex justify-between text-xs font-extrabold text-lime-600">
-        <span id="pct-g">-%</span>
-        <span id="pct-b">-%</span>
+
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>Active (A)</span>
+          <span>Passive (P)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full my-4">
+          <div id="pin-a" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-sky-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-sky-600">
+          <span id="pct-a">-%</span>
+          <span id="pct-p">-%</span>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <div class="flex justify-between text-sm font-bold text-gray-700">
+          <span>Harmony (H)</span>
+          <span>Discussion (D)</span>
+        </div>
+        <div class="relative w-full h-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full my-4">
+          <div id="pin-h" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-amber-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        </div>
+        <div class="flex justify-between text-xs font-extrabold text-amber-600">
+          <span id="pct-h">-%</span>
+          <span id="pct-d">-%</span>
+        </div>
       </div>
     </div>
 
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>Stubborn (S)</span>
-        <span>Flexible (F)</span>
+    <hr class="border-gray-100 my-2">
+
+    <div class="space-y-6">
+      
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-id-card text-slate-400 text-sm"></i> 1. 基本的な性格診断
+        </h2>
+        <p class="text-sm leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100/70">
+          あなたは、感情の波に流されることなく、グループの会話や状況を常に一歩引いた視点から客観的に見つめている人です。自分から笑いの中心になろうと無駄なおしゃべりをしたり、その場のノリを加速させるために中身のない同調をしたりすることはあまり多くありません。<br><br>
+          内面には非常に強固なロジックや仕組みへのこだわり（頑固さ）を秘めていますが、それを感情的に他人に押し付けることはありません。自分が不用意な発言をして場の空気を壊してしまうことを人一倍気にかけているからこそ、まずは徹底して「聞き手」に回り、周囲の意見を冷静に分析しています。<br><br>
+          突飛なボケを仕掛けるタイプではありませんが、他人が感情論で行き詰まったり、会話がグダグダに脱線したりしたときに、最も合理的で誰もが納得せざるを得ない「解決の一言」をボソッと放ち、場を本来のスマートな状態へ引き戻すことができる静かな実力者です。
+        </p>
       </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full my-4">
-        <div id="pin-s" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-pink-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-users text-slate-400 text-sm"></i> 2. 周りの人から見たあなたの見え方
+        </h2>
+        <p class="text-sm leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100/70">
+          友達から見たあなたは、ズバリ<span class="font-bold text-slate-900 bg-amber-100 px-1 rounded">「普段は静かに話を聞いているけれど、ここぞという時に一言で場をきれいに収めてくれる、知的な軌道修正役」</span>です。<br><br>
+          みんなが「次どこ行く？」「どっちの意見が正しい？」と感情的になってダラダラ議論が紛糾しているとき、あなたは基本的には静かにしています。しかし、議論が完全に行き詰まったその瞬間、あなたが「そもそも、前提の条件がズレてるよ。Aプランだと予算が厳しいし、Bプランだと時間が足りない。だからCにするのが一番現実的じゃない？」と、あまりにも的確で無駄のない「事実」を提示し、場を本来の心地よい温度感にスッと戻します。<br><br>
+          その無駄のないスマートな立ち回りはまさにアサシンのようで、友達は内心「やっぱりフクロウは全部見透かしてたな」「この人がいると会話が迷子にならないから本当に助かる」と、絶大な信頼を寄せられています。<br><br>
+          賢すぎて少しミステリアスなオーラを放っているため、日常のくだらない雑談のときには「フクロウにこんな話してもつまらないかな……」と友達が少し緊張することもありますが、進路やトラブルの解決など「本当に人生で迷ったとき」には、一番に「フクロウの意見を聞いてみたい」と頼りにされています。
+        </p>
       </div>
-      <div class="flex justify-between text-xs font-extrabold text-pink-600">
-        <span id="pct-s">-%</span>
-        <span id="pct-f">-%</span>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-thumbs-up text-slate-400 text-sm"></i> 3. 友達としての良いところ
+        </h2>
+        <div class="bg-emerald-50/40 p-4 rounded-2xl border border-emerald-100/70 space-y-4">
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ 迷宮入りの議論を終わらせる、圧倒的な状況整理能力</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">全員の感情的なもつれやグダグダした空気を完全に排除し、最も効率的で誰もが納得する「正解」へ場を導き出してくれます。</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ 絶対に裏切らない、ブレない客観性と傾聴力</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">その場のノリや気まずい空気に流されて意見を変えることがなく、まずは相手の話を最後まで冷静に聞いてくれるため、あなたの言葉には他の誰よりも重い「信頼の価値」があります。</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ いるだけでグループの知性を底上げする、静かな存在感</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">あなたがバックボーンとして控えているだけで、グループ全体の意思決定や問題解決能力がグッと高まります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm"></i> 4. 交友関係を築く上での注意ポイント
+        </h2>
+        <p class="text-sm leading-relaxed bg-rose-50/40 p-4 rounded-2xl border border-rose-100/70">
+          あなたの論理的な正しさと場を収める力は最強の武器ですが、時にそれが「人の気持ちを一切無視した、冷酷な言葉」として相手に刺さってしまうことがあります。友達が悩んでいるとき、彼らが求めているのは「正しい解決策」ではなく、ただ「大変だったね」と言ってくれる「共感」であるケースがほとんどです。そこであなたが「それは君の選択ミスだよね」と事実を突きつけてしまうと、相手は心をへし折られ、あなたに本音を話せなくなってしまいます。<br><br>
+          周りがあなたに意見を求めてくるのは、あなたの知性と聞き上手なところをリスペクトしているからです。しかし、あまりにも感情を削ぎ落とした対応ばかりしていると、「フクロウの前だと息が詰まる」と、心の距離を置かれてしまいます。<br><br>
+          たまには正論をぐっと飲み込み、「それは災難だったね」と中身のないうわべの共感をあえて見せてみたり、自分からくだらないバカ話に乗っかって無防備に笑ってみたりしてください。あなたのその人間らしい「温かみ」が見えたとき、友達は恐怖心なく、あなたに心からの信頼を寄せるようになります。
+        </p>
       </div>
     </div>
 
-
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>Active (A)</span>
-        <span>Passive (P)</span>
-      </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full my-4">
-        <div id="pin-a" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-sky-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
-      </div>
-      <div class="flex justify-between text-xs font-extrabold text-sky-600">
-        <span id="pct-a">-%</span>
-        <span id="pct-p">-%</span>
-      </div>
-    </div>
-
-
-    <div class="space-y-2">
-      <div class="flex justify-between text-sm font-bold text-gray-700">
-        <span>Harmony (H)</span>
-        <span>Discussion (D)</span>
-      </div>
-      <div class="relative w-full h-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full my-4">
-        <div id="pin-h" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-amber-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
-      </div>
-      <div class="flex justify-between text-xs font-extrabold text-amber-600">
-        <span id="pct-h">-%</span>
-        <span id="pct-d">-%</span>
-      </div>
-    </div>
   </div>
-  <div class="mt-8"><a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2"><i class="fa-solid fa-rotate-right"></i> もう一度診断する</a></div>
+
+  <div class="mt-8 mb-12">
+    <a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2">
+      <i class="fa-solid fa-rotate-right"></i> もう一度診断する
+    </a>
+  </div>
+
   <script>
     function getParam(name) {
       var url = new URL(window.location.href);
       return parseInt(url.searchParams.get(name)) || 50;
     }
-
 
     window.addEventListener('DOMContentLoaded', function() {
       var g = getParam('g');
@@ -88,12 +156,10 @@
       var a = getParam('a');
       var h = getParam('h');
 
-
       var b = 100 - g;
       var f = 100 - s;
       var p = 100 - a;
       var d = 100 - h;
-
 
       document.getElementById('pct-g').textContent = g + '%';
       document.getElementById('pct-b').textContent = b + '%';
@@ -103,7 +169,6 @@
       document.getElementById('pct-p').textContent = p + '%';
       document.getElementById('pct-h').textContent = h + '%';
       document.getElementById('pct-d').textContent = d + '%';
-
 
       setTimeout(function() {
         document.getElementById('pin-g').style.left = 'calc(' + b + '% - 10px)';
