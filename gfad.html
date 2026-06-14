@@ -5,14 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>診断結果 - GFAD</title>
   <script src="https://cdn.tailwindcss.com"></script>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>診断結果 - GFAD</title>
-  <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-  <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style> body { background-color: #F7FAF9; } </style>
 </head>
 <body class="p-4 md:p-8 flex flex-col items-center justify-center min-h-screen">
@@ -22,14 +15,15 @@
     <img src="./GFAD.jpeg" class="w-full h-auto rounded-2xl mb-3 shadow-inner" alt="GFAD">
     <p class="text-lg font-black text-slate-800">GFAD：ホラ吹きカラス</p>
   </div>
- <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-md p-6 md:p-8 space-y-8 border border-gray-100">
+
+  <div class="w-full max-w-md mx-auto bg-white rounded-3xl shadow-md p-6 md:p-8 space-y-8 border border-gray-100">
     <div class="space-y-2">
       <div class="flex justify-between text-sm font-bold text-gray-700">
         <span>GameChanger (G)</span>
         <span>Balance (B)</span>
       </div>
       <div class="relative w-full h-3 bg-gradient-to-r from-lime-400 to-lime-500 rounded-full my-4">
-        <div id="pin-g" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-lime-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        <div id="pin-g" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-lime-500 rounded-full shadow transition-all duration-1000"></div>
       </div>
       <div class="flex justify-between text-xs font-extrabold text-lime-600">
         <span id="pct-g">-%</span>
@@ -43,7 +37,7 @@
         <span>Flexible (F)</span>
       </div>
       <div class="relative w-full h-3 bg-gradient-to-r from-pink-400 to-pink-500 rounded-full my-4">
-        <div id="pin-s" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-pink-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        <div id="pin-s" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-pink-500 rounded-full shadow transition-all duration-1000"></div>
       </div>
       <div class="flex justify-between text-xs font-extrabold text-pink-600">
         <span id="pct-s">-%</span>
@@ -57,7 +51,7 @@
         <span>Passive (P)</span>
       </div>
       <div class="relative w-full h-3 bg-gradient-to-r from-sky-400 to-sky-500 rounded-full my-4">
-        <div id="pin-a" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-sky-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        <div id="pin-a" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-sky-500 rounded-full shadow transition-all duration-1000"></div>
       </div>
       <div class="flex justify-between text-xs font-extrabold text-sky-600">
         <span id="pct-a">-%</span>
@@ -71,16 +65,78 @@
         <span>Discussion (D)</span>
       </div>
       <div class="relative w-full h-3 bg-gradient-to-r from-amber-400 to-amber-500 rounded-full my-4">
-        <div id="pin-h" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-amber-500 rounded-full shadow transition-all duration-1000" style="left: 50%;"></div>
+        <div id="pin-h" class="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-4 border-amber-500 rounded-full shadow transition-all duration-1000"></div>
       </div>
       <div class="flex justify-between text-xs font-extrabold text-amber-600">
         <span id="pct-h">-%</span>
         <span id="pct-d">-%</span>
       </div>
     </div>
+
+    <hr class="border-gray-100 my-2">
+
+    <div class="space-y-6 text-slate-700">
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-id-card text-slate-400 text-sm"></i> 1. 基本的な性格診断
+        </h2>
+        <p class="text-sm leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100/70">
+          あなたは、退屈な日常や停滞した空気を絶対に許さない、好奇心とエンタメ精神の塊のような人です。面白そうな噂話、人間関係のちょっとした揉め事、新しいトレンドなど、刺激的な話を見つけると首を突っ込まずにはいられません。物事をストレートに受け取るのではなく、「こう解釈したらもっと面白くなるんじゃないか？」と、あえて話をややこしくしたり、裏をかいたりしてその場のノリをコントロールすることに快感を覚えます。<br><br>
+          頭の回転が異常に早く、思考の柔軟性はトップクラスです。しかしその反面、自分の過去の発言への執着が全くないため、「昨日と言ってることが180度違う」ということが日常茶飯事の、お天気屋で掴みどころのないタイプです。
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-users text-slate-400 text-sm"></i> 2. 周りの人から見たあなたの見え方
+        </h2>
+        <p class="text-sm leading-relaxed bg-slate-50 p-4 rounded-2xl border border-slate-100/70">
+          友達から見たあなたは、ズバリ「グループの情報をかき混ぜる、愛すべきトラブルの火種」です。<br><br>
+          あなたがニヤニヤしながら「ねえ、今の聞いた？ｗ」「ここだけの話なんだけど……」と話し始めるとき、周りは「うわ、またカラスが何か面白いネタ持ってきたぞｗ」「また何か始まったな」と、内心めちゃくちゃワクワクしています。あなたが撒く火種や持ってくる噂話は、いつもグループの退屈な空気を一瞬で一変させるパワーがあるからです。<br><br>
+          ただ、あなたの「話を盛るクセ」や「話をややこしくして楽しむ悪趣味さ」を周囲は完全に把握しているため、あなたの言うことを100%真に受ける人はいません。「カラスが言ってることだから、半分くらいはホラだと思って聞こう」というのが、グループ内の暗黙の了解になっています。昨日まで「あの店マジで最高！」と言っていたのに、今日には「あそこはもうオワコンっしょ」と真逆のことを平気な顔で言うので、友達からは「ほんと調子いいなｗ」「口から先に生まれてきたやつ」と呆れられつつも、その予測不可能で絶対に飽きさせないキャラクター性から、集まりには絶対に欠かせない最高に面白いスパイスとして重宝されています。
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-thumbs-up text-slate-400 text-sm"></i> 3. 友達としての良いところ
+        </h2>
+        <div class="bg-emerald-50/40 p-4 rounded-2xl border border-emerald-100/70 space-y-4">
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ 絶対に退屈させない、空気を変える天才</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">どんなに冷え切った空気や気まずいムードでも、あなたが一言しゃべれば一瞬で笑いや活気が戻ります。グループのテンションを爆上げする能力はピカイチです。</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ 圧倒的な情報感度とフットワークの軽さ</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">常に楽しいことへのアンテナを張っているため、面白いトレンドやゴシップを一番早くキャッチして共有してくれます。あなたといるだけで、常に新しい刺激に触れることができます。</p>
+          </div>
+          <div>
+            <h3 class="text-sm font-extrabold text-emerald-900 flex items-center gap-1">✨ 根に持たない、圧倒的なサバサバ感</h3>
+            <p class="text-xs text-slate-600 pl-5 mt-1 leading-relaxed">昨日どれだけ言い合いをしたり、いじられたりしても、次の日にはケロッと忘れて笑っています。人間関係のドロドロした執着が一切ないため、ある意味で非常に付き合いやすい人です。</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-base font-extrabold text-slate-800 mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-triangle-exclamation text-amber-500 text-sm"></i> 4. 交友関係を築く上での注意ポイント
+        </h2>
+        <p class="text-sm leading-relaxed bg-rose-50/40 p-4 rounded-2xl border border-rose-100/70">
+          あなたの「場を面白くしたい」という悪ノリや悪巧みは、時に度が過ぎてしまい、本当の信頼関係をぶち壊す大火事に発展することがあります。あなたが「これくらい大袈裟に言った方が盛り上がるし」と軽い気持ちで流したデマや、面白がって首を突っ込んだ他人の揉め事が、当事者にとっては全く笑えないレベルの深い傷やストレスになっているケースがあります。<br><br>
+          周りが「またカラスが始まったｗ」と笑ってくれているのは、あなたのキャラを理解して「許容できる範囲」で受け流してくれているからです。しかし、それが何度も重なると「カラスは口が軽すぎるから、本当に大事な話は絶対に秘密にしておこう」「ただの調子いいホラ吹き」と、本音の相談相手から真っ先に除外されてしまいます。<br><br>
+          時には「盛らない、嘘をつかない、首を突っ込まない」という沈黙の時間を守り、友達に対して「ここぞという時は絶対に裏切らない誠真面目さ」があることを見せてください。それができて初めて、あなたのホラは極上のエンターテインメントとして全員に愛され続けます。
+        </p>
+      </div>
+    </div>
   </div>
-  <div class="mt-8"><a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2"><i class="fa-solid fa-rotate-right"></i> もう一度診断する</a></div>
- <script>
+
+  <div class="mt-8">
+    <a href="./index.html" class="px-8 py-3 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm shadow-sm transition-all inline-flex items-center gap-2">
+      <i class="fa-solid fa-rotate-right"></i> もう一度診断する
+    </a>
+  </div>
+
+  <script>
     function getParam(name) {
       var url = new URL(window.location.href);
       return parseInt(url.searchParams.get(name)) || 50;
@@ -106,12 +162,19 @@
       document.getElementById('pct-h').textContent = h + '%';
       document.getElementById('pct-d').textContent = d + '%';
 
+      // 初期位置を設定
+      document.getElementById('pin-g').style.left = '0%';
+      document.getElementById('pin-s').style.left = '0%';
+      document.getElementById('pin-a').style.left = '0%';
+      document.getElementById('pin-h').style.left = '0%';
+
+      // 正しいパーセントの位置へスムーズにアニメーション移動
       setTimeout(function() {
         document.getElementById('pin-g').style.left = 'calc(' + b + '% - 10px)';
         document.getElementById('pin-s').style.left = 'calc(' + f + '% - 10px)';
         document.getElementById('pin-a').style.left = 'calc(' + p + '% - 10px)';
         document.getElementById('pin-h').style.left = 'calc(' + d + '% - 10px)';
-      }, 300);
+      }, 100);
     });
   </script>
 </body>
