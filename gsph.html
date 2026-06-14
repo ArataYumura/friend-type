@@ -142,7 +142,7 @@
       return parseInt(url.searchParams.get(name)) || 50;
     }
 
-    window.addEventListener('DOMContentLoaded', function() {
+   window.addEventListener('DOMContentLoaded', function() {
       var g = getParam('g');
       var s = getParam('s');
       var a = getParam('a');
@@ -150,9 +150,10 @@
 
       var b = 100 - g;
       var f = 100 - s;
-      var p = 100 - a; // ← ここを小文字の p に修正
+      var p = 100 - a;
       var d = 100 - h;
 
+      // 1. 文字（パーセント）を書き換える
       document.getElementById('pct-g').textContent = g + '%';
       document.getElementById('pct-b').textContent = b + '%';
       document.getElementById('pct-s').textContent = s + '%';
@@ -162,17 +163,17 @@
       document.getElementById('pct-h').textContent = h + '%';
       document.getElementById('pct-d').textContent = d + '%';
 
-      // 初期位置をいったん真ん中（50%）にセット
+      // 2. ピンの初期位置を真ん中にセット
       document.getElementById('pin-g').style.left = '50%';
       document.getElementById('pin-s').style.left = '50%';
       document.getElementById('pin-a').style.left = '50%';
       document.getElementById('pin-h').style.left = '50%';
 
-      // 300ミリ秒（0.3秒）後にURLのスコア位置へスムーズに移動
+      // 3. 0.3秒後にそれぞれのスコア位置へスムーズに移動
       setTimeout(function() {
         document.getElementById('pin-g').style.left = 'calc(' + b + '% - 10px)';
         document.getElementById('pin-s').style.left = 'calc(' + f + '% - 10px)';
-        document.getElementById('pin-a').style.left = 'calc(' + p + '% - 10px)'; // ← ここを小文字の p に修正
+        document.getElementById('pin-a').style.left = 'calc(' + p + '% - 10px)';
         document.getElementById('pin-h').style.left = 'calc(' + d + '% - 10px)';
       }, 300);
     });
